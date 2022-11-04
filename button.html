@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .cont {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: #A8A9B4;
+  }
+
+  .box {
+    padding: 10px 40px;
+    border: 1px solid black;
+    position: relative;
+    background-color: transparent;
+    color: black;
+    z-index: 1;
+    transition: color .9s linear;
+    letter-spacing: 2px;
+    font-family: monospace;
+    text-transform: uppercase;
+  }
+
+  .box::before {
+    position: absolute;
+    top: 0%;
+    content: "";
+    left: 0%;
+    height: 99%;
+    z-index: -1;
+    width: 0%;
+    transition: width 0.78s linear;
+    background-color: black;
+  }
+
+  .box:hover:before {
+    width: 100%;
+  }
+
+  .box:hover {
+    color: white;
+  }
+</style>
+
+<body>
+  <div class="cont">
+    <div class="box">
+      Download
+    </div>
+  </div>
+</body>
+
+</html>

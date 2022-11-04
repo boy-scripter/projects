@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{
+      counter-reset: newc 5;
+      counter-increment: 2;
+    }
+    
+    .cont{
+      display:grid;
+      min-height: 100vh;
+      place-content: center;
+      background-color: black;
+    }
+    
+    .wrap{
+      border:10px solid transparent;
+      border-top-color: blue;
+      border-bottom-color: blue;
+      border-radius: 50%;
+      width:100px;
+      height:100px;
+      filter: drop-shadow(0px 0px 6px blue);
+      animation: spinner 0.91s linear infinite;
+    }
+    
+  @keyframes spinner{
+    0%{
+      transform: rotate(0deg);
+
+    }
+    100%{
+       transform: rotate(360deg);
+       
+    }
+  }
+    
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div class="wrap">
+   
+    </div>
+  </div>
+</body>
+</html>

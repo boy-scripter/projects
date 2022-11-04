@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+   
+   html{
+        background-color: black;
+        height: 100vh;
+        width:100vw;
+    }
+    svg{
+      height:100vh;
+      width: 100%;
+    }
+    
+    circle{
+      fill:red;
+      stroke: white;
+      stroke-width:1px;
+      transition: 2.0s linear ;
+      
+    }
+  </style>
+</head>
+<body>
+  <svg>
+    <circle r="8px" cy="10px" cx="60px" >
+  </svg>
+</body>
+<script>
+let arr = ["red","green","pink","blue","orange","white","yellow","transparent"]
+let root =document.getElementsByTagName('html')[0];
+let circle = document.getElementsByTagName('svg')[0].firstElementChild;
+
+ root.addEventListener('mousemove',(event)=>{
+   let newcircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+   newcircle.setAttribute('cx',event.clientX)
+   newcircle.setAttribute('cy',event.clientY)
+   newcircle.setAttribute('r',Math.floor(Math.random()*20)+5)
+   circle.parentNode.appendChild(newcircle);
+   newcircle.style.fill = `${arr[Math.floor(Math.random() * 9)]}`;
+   newcircle.style.fill = `${arr[Math.floor(Math.random() * 9)]}`
+   })
+</script>
+</html>

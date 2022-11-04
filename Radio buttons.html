@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Title</title>
+   <style>
+     *{
+       margin:0;
+       padding: 0;
+     }
+     .container{
+       display: grid;
+       place-content: center;
+       height:100vh;
+       background-color: black;
+     }
+     
+     .sub{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width:300px;
+       height:40px;
+       border:1px solid blue;
+       border-radius: 20px;
+       overflow: hidden;
+     }
+     
+     input[type="radio"]{
+       appearance: none;
+       width:34%;
+       padding: 10px;
+       height: 99%;
+       position: relative;
+       transition: all 0.3s linear;
+     }
+     
+  
+ input[type="radio"]:nth-child(1):before{
+       position: absolute;
+       content: "Option1";
+       color:white;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+     }
+  
+     
+ input[type="radio"]:nth-child(2){
+       position:relative;
+       border-left:1px solid black;
+       border-right:1px solid black;
+     }
+
+     
+ input[type="radio"]:nth-child(2):before{
+       top: 50%;
+       left:50%;
+       position: absolute;
+       content: "Option2";
+       color: antiquewhite;
+       transform: translate(-50%,-50%);
+     }
+     
+     input[type="radio"]:checked{
+       background: blue;
+     }
+     
+     input[type="radio"]:nth-child(3):before{
+       top: 50%;
+       left:50%;
+       position: absolute;
+       content: "Option3";
+       color: antiquewhite;
+       transform: translateX(-50%) translateY(-50%);
+     }
+ 
+   </style>
+  </head>
+  <body>
+   <div class="container">
+     <div class="sub">
+     <input type="radio" name="radi" id="radi">
+      <input type="radio" name="radi" id="radi">
+     <input type="radio" name="radi" id="radi">
+     </div>
+   </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diwali</title>
+  <link href='https://css.gg/twitter.css' rel='stylesheet'>
+  <link href='https://css.gg/facebook.css' rel='stylesheet'>
+  <link href='https://css.gg/instagram.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('./Paper.jpg');
+      width: 100vw;
+      min-height: 100vh;
+      font-family: Montserrat;
+      font-size: 19px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+     
+    }
+
+    .icons {
+      float: right;
+      margin-right: 5%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+    }
+
+    .navbar>.navitem {
+      font-weight: 600;
+      padding: 20px 15px;
+    }
+
+    .icons>.icons-item {
+      padding: 20px 8px;
+      color: green;
+    }
+
+    .banner {
+      background-image: url('bg.png');
+      background-size: 90% 100%;
+      height: 40vh;
+      background-repeat-x: no-repeat;
+      border: 1px solid black;
+    }
+
+    .banner{
+      text-align: right;
+      font-weight: 700;
+      font-size: 30px;
+      padding:10px 30px 0px 0;
+    }
+
+    .humburger {
+      float: right;
+      margin-right: 5%;
+      display: none;
+      padding: 5px 8px;
+      margin-top: 2%;
+      position: relative;
+      z-index: 999;
+      
+    }
+
+    .humburger > span {
+      transition: transform .1s ease-in-out, opacity 0.1s linear;
+      transform-origin: center left;
+      width: 31px;
+      border: 1px solid black;
+      height: 5px;
+      background-color: deepskyblue;
+      display: inline-block;
+      border-radius: 10px;
+      margin-top: 6px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .icons {
+        margin: 0;
+        margin-left: 3%;
+        float: left;
+      }
+
+      .navbar {
+        visibility: hidden;
+        width: 2px;
+      }
+
+      .active {
+        flex-direction: column;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        visibility: initial;
+        background-color: white;
+      }
+
+      .active .navitem:hover {
+        color: grey;
+      }
+
+      .humburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul class="icons" contenteditable="false">
+      <li class="icons-item"><i class="gg-instagram"></i></li>
+      <li class="icons-item"><i class="gg-facebook"></i></li>
+      <li class="icons-item"><i class="gg-twitter"></i></li>
+    </ul>
+    <div class="humburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="navbar" aria-hidden="true">
+      <li class="navitem">HOME</li>
+      <li class="navitem">FESTIVAL</li>
+      <li class="navitem">GALLERY</li>
+      <li class="navitem">ABOUT</li>
+      <li class="navitem">CONTACT</li>
+    </ul>
+
+  </header>
+  
+  <section class="diwali">
+    
+    HAPPY
+    DIWALI
+     </section>
+</body>
+<script>
+  let navbar = document.getElementsByClassName('navbar')[0];
+  let humburger = document.getElementsByClassName('humburger')[0];
+  let burger_1 = humburger.firstElementChild;
+  let burger_2 = humburger.children[1];
+  let burger_3 = humburger.lastElementChild;
+  console.log(burger_2);
+  humburger.addEventListener('click', () => {
+    if (burger_1.style.transform != 'rotate(45deg)') {
+      burger_1.style.transform = 'rotate(45deg)';
+      burger_3.style.transform = 'rotate(-45deg)';
+      burger_1.style.backgroundColor = 'red';
+      burger_3.style.backgroundColor = 'red';
+      burger_2.style.opacity = '0';
+      navbar.classList.add('active');
+      return true;
+    }
+    navbar.classList.remove('active')
+    burger_1.style.backgroundColor = 'deepskyblue';
+    burger_3.style.backgroundColor = 'deepskyblue';
+    burger_1.style.transform = 'rotate(0deg)';
+    burger_3.style.transform = 'rotate(0deg)';
+    burger_2.style.opacity = '1';
+   
+  })
+</script>
+
+</html>

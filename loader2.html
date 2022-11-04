@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .cont {
+      background: black;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .box {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      box-shadow: 0.9px 0.5px 1px 0px #6AAAA7;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      color: white;
+      transform: translateY(-50%);
+      text-align: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 24px;
+      letter-spacing: 4px;
+      font-weight: 100;
+      animation-name: blink;
+      text-shadow: seagreen;
+      animation-duration: 2s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes spin {
+
+      from{
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      to{
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+    }
+
+    @keyframes blink {
+      50% {
+        color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cont">
+    <div class="box"></div>
+    <span>Hello<br>World</span>
+  </div>
+</body>
+
+</html>

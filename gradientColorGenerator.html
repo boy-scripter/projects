@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: black;
+      color:white;
+      min-height:100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .cont{
+      display: inline-flex;
+      width: 86vw;
+      border:2px solid whitesmoke;
+      justify-content: space-between;
+      align-items: center;
+      height:200px;
+      flex-direction: column;
+      padding:20px 0;
+      border-radius: 5px;
+    }
+    h2{
+      text-shadow: 1px 1px 3px black;
+      font-weight: 200;
+    }
+    .color{
+      padding:10px;
+      border: 2px solid white;
+      border-radius: 3px;
+      color:white;
+      font-family: monospace;
+      font-weight: 700;
+      background-color: transparent;
+    }
+    .color:active{
+      background-color: white;
+      color:black;
+    }
+    .copy{
+      padding: 6px 4px;
+      border:2px solid white;
+      border-radius: 3px;
+      font-weight: 200;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <h2>Random Color Gradient</h2>
+   
+   <button class="color">Generate</button>
+   <buton class="copy">Copy Code</butlton>
+  </div>
+  <script>
+  let color_generate = document.getElementsByClassName('color')[0];
+  let body = document.getElementsByTagName('body')[0];
+  let copy = document.getElementsByClassName('copy')[0];
+   color_generate.addEventListener('click', () => {
+    body.style.backgroundImage = `linear-gradient( to bottom ,rgb(${Math.floor(Math.random() *256 )},${Math.floor(Math.random() *256 )},${Math.floor(Math.random() *256 )}),rgb(${Math.floor(Math.random() *256 )},${Math.floor(Math.random() *256 )},${Math.floor(Math.random() *256 )}))`;
+    })
+  copy.addEventListener('click',() => {
+    copy.innerHTML = body.style.backgroundImage||"Black";
+ 
+        })
+  
+  </script>
+</body>
+</html>

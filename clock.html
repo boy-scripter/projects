@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-content: center;
+      min-height: 100vh;
+      background-color: lightskyblue;
+    }
+
+    .circle {
+      width: 260px;
+      height: 260px;
+      background-color: #ACAFC9;
+      border-radius: 50%;
+      border: 10px solid white;
+      box-shadow: inset 0px 0px 5px black, 0px 0px 1px black;
+      position: relative;
+    }
+
+    span {
+      position: absolute;
+      display: inline-block;
+      width: 3px;
+      height: 110px;
+      background-color: black;
+      left: 50%;
+      top: 2%;
+      transform-origin: center bottom;
+      border-radius: 4px;
+    }
+
+    .hour {
+      top: 19%;
+      background-color: red;
+      height: 70px;
+    }
+
+    .minute {
+      top: 11%;
+      background-color: dodgerblue;
+      height: 90px;
+    }
+    .mini{
+      position: absolute;
+      width:16px;
+      height: 16px;
+      top:49%;
+      left:50.6%;
+      transform: translate(-50%,-50%);
+      background-color: black;
+      z-index: 2;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="circle">
+    <span class="minute"></span>
+    <span class="second"></span>
+    <span class="hour"></span>
+    <span class="mini"></span>
+  </div>
+  <script>
+    let minute = document.getElementsByClassName('minute')[0];
+    let second = document.getElementsByClassName('second')[0];
+    let hour = document.getElementsByClassName('hour')[0];
+
+    setInterval(() => {
+      let date = new Date();
+      second.style.transform = `rotate(${6*date.getSeconds()}deg)`;
+      minute.style.transform = `rotate(${6*date.getMinutes()}deg)`;
+      hour.style.transform = `rotate(${(30*date.getHours()+date.getMinutes()/2)}deg)`;
+    }, 1000)
+  </script>
+</body>
+
+</html>
