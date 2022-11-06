@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100vh;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0%;
+      padding: 0%;
+    }
+
+    body {
+      padding: 10px;
+      font-family: sans-serif;
+    }
+
+    .big-text {
+      font-size: 24px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    select {
+      padding: 4px 10px;
+
+    }
+
+    table input {
+      width: 40px;
+      padding: 4px 10px;
+      -moz-appearance: textfield;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    table {
+      margin-top: 10px;
+    }
+
+    tr,
+    td,
+    table {
+      border-collapse: collapse;
+    }
+
+    tr:nth-child(1)>td,
+    tr:nth-child(1) {
+      background-color: blue;
+      color: aliceblue;
+      font-weight: 700;
+    }
+
+    tr:nth-child(odd) {
+      background-color: rgb(197, 188, 188);
+    }
+
+    tr:nth-child(9)>td,
+    tr:nth-child(9) {
+      background-color: rgb(197, 188, 188);
+      font-weight: 700;
+    }
+
+    .btn {
+      padding: 10px;
+      margin-top: 20px;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="big-text">Time Sheet Calculator</header>
+  <div class="table">
+    <form onsubmit="canwh(); return false" id="form1">
+      <table>
+        <tr>
+          <td>Day</td>
+          <td>Starting Time</td>
+          <td>Ending Time</td>
+          <td>Break Deduction</td>
+          <td>Total</td>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td>
+            <input placeholder="00" maxlength="2" max="12" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="start_hour"> : <input placeholder="00" maxlength="2" type="number" class="start_minute">
+            <select class="start_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM"> AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="end_hour"> : <input placeholder="00" maxlength="2" type="number" class="end_minute">
+            <select class="end_ampm">
+              <option value="PM" selected> PM</option>
+              <option value="AM">AM</option>
+            </select>
+          </td>
+          <td>
+            <input placeholder="00" maxlength="2" type="number" class="break_hour"> : <input placeholder="00" maxlength="2" type="number" class="break_minute">
+
+          </td>
+          <td class="output">00.00</td>
+        </tr>
+        <tr>
+          <td colspan="3"> CodeBeautify</td>
+          <td style="text-align:right">Total Hours: </td>
+          <td class="foutput">00.00</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  </div>
+    <div class="formbtn">
+      <input class="btn" form="form1" type="submit" value="CALCULATE" >
+      <input class="btn" form="form1" type="reset" value="CLEAR ALL">
+     </div>
+  </div>
+  <script>
+  var error = "valid";
+  const toMilliseconds = (hrs,min,ampm) => { 
+  hrs = Number(hrs);
+  min = Number(min);
+    if(hrs == ""){
+      error =  "Input Not Valid";
+     return 0;
+    }
+     else if(ampm == "PM"){
+        if(hrs == 12){
+     return (hrs*60*60+min*60)*1000;
+        }
+      return ((hrs+12)*60*60+min*60)*1000;
+    }
+     else if(ampm== "AM"){
+     if(hrs==12){
+       return ((hrs-12)*60*60+min*60)*1000;   
+     }
+     return (hrs*60*60+min*60)*1000;    
+    }
+      error = "miliseconds error"
+     return 0;
+      
+ }
+ 
+ function breakdeduct(hrs,min,difference){
+   if((error == "valid") && (Math.sign(difference) == 1)){
+    answer =  difference - (hrs*60*60+min*60)*1000;
+    return answer;
+   }
+    error = "break deduct error";
+    return 0;
+ }
+ 
+ 
+  function canwh() {
+    var temp=0;
+  for(let i = 0; i < 7;i++){
+  let start_hour = document.getElementsByClassName('start_hour')[i].value;
+  let start_minute = document.getElementsByClassName('start_minute')[i].value;
+  let start_ampm  = document.getElementsByClassName('start_ampm')[i].value;
+  let end_hour = document.getElementsByClassName('end_hour')[i].value;
+  let end_minute = document.getElementsByClassName('end_minute')[i].value;
+  let end_ampm  = document.getElementsByClassName('end_ampm')[i].value;
+  let break_hour = document.getElementsByClassName('break_hour')[i].value;
+  let break_minute = document.getElementsByClassName('break_minute')[i].value;
+  let output = document.getElementsByClassName('output')[i];
+  let difference =  toMilliseconds(end_hour,end_minute,end_ampm) - toMilliseconds(start_hour,start_minute,start_ampm);
+  let answer = breakdeduct(break_hour,break_minute,difference);
+  if(Math.sign(answer) != -1){
+      output.innerHTML = parseInt(answer/1000/60/60) +"." + ((answer/60000)%60 <= 9 ? 0+""+(answer/60000)%60 : (answer/60000)%60);
+      temp += answer;
+      error =  "valid";
+    } 
+    else{
+      error = "Input Not Valid";
+      alert(error);
+    }
+  }
+  let foutput = document.getElementsByClassName('foutput')[0];
+  foutput.innerHTML = parseInt(temp/1000/60/60) +"." + ((temp/60000)%60 <= 9 ? 0+""+(temp/60000)%60 : (temp/60000)%60);;
+  }
+   
+  </script>
+</body>
+
+</html>
